@@ -3,7 +3,7 @@
 
 Projeto de criação do jogo da cobrinha utilizando HTML5, CSS3 e JavaScript.
 
-O projeto pode ser acessado <a href="https://brenolor.github.io/Snake_Game_DIO/">aqui</a>
+O projeto pode ser acessado <a href="https://brenolor.github.io/Snake_Game_DIO/index.html">aqui</a>
 
 ## Descrição do Desafio
 Já pensou em criar seu próprio jogo do zero? Aprenda a desenvolver de forma simples o clássico jogo da cobrinha utilizando HTML, CSS e JavaScript. Sendo assim, sua missão é reproduzir esse projeto prático, considerando todas as instruções e dicas da expert. Nesse sentido, fique a vontade para implementar suas próprias melhorias e evoluções.
