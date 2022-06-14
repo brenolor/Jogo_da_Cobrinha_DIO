@@ -11,6 +11,14 @@ snake[0] = {
 }
 //a cobra começa andando para a direita
 let direction = "right";
+let food = {
+    //cria as coordenadas de maneira aleatória
+    //floor - retira o ponto flutuante
+    //random - cria um número entre 0 e 1
+    //15 impede de criar fora do canvas
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
 
 //inicia o canvas
 function criarBG() {
@@ -27,6 +35,11 @@ function criarCobrinha() {
         context.fillStyle = "green";
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
+}
+
+function drawFood() {
+    context.fillStyle = "red";
+    context.fillRect(food.x, food.y, box, box);
 }
 
 //acrescenta evento para ler o teclado
@@ -49,6 +62,7 @@ function iniciarJogo() {
 
     criarBG();
     criarCobrinha();
+    drawFood();
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
