@@ -11,6 +11,7 @@ snake[0] = {
 }
 //a cobra começa andando para a direita
 let direction = "right";
+let score = 0;
 let food = {
     //cria as coordenadas de maneira aleatória
     //floor - retira o ponto flutuante
@@ -55,16 +56,16 @@ function update (event) {
 function iniciarJogo() {
 
     //condiciona para que ela não saia da tela
-    if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
+    if(snake[0].x == 16 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
-    if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
+    if(snake[0].y == 16 * box && direction == "down") snake[0].y = 0;
     if(snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
 
     //confere se a cabeça colidiu com o corpo
     for(i = 1; i < snake.length; i++) {
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
             clearInterval(jogo);
-            alert('Game Over :(');
+            alert('GAME OVER. Seu Score foi: ' + score);
         }
     }
 
@@ -85,6 +86,8 @@ function iniciarJogo() {
         //retira rabo
         snake.pop();
     }else {
+        score++;
+        document.getElementById("score").innerHTML = "Score: " + score;
         //a comida muda de lugar quando a cobra encosta nela
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
